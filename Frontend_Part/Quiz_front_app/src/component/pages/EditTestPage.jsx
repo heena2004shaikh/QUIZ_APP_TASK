@@ -12,7 +12,7 @@ const EditTestPage = () => {
     const fetchTest = async () => {
       try {
         const res = await axios.get(`http://localhost:8080/api/test/${testId}`);
-        setTest(res.data.testDTO); // make sure your backend returns `testDTO`
+        setTest(res.data.testDTO); 
       } catch (err) {
         setError('❌ Failed to load test: ' + (err.response?.data || err.message));
       }

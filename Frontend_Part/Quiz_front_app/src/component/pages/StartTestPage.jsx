@@ -11,7 +11,7 @@ const StartTestPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [result, setResult] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [remainingTime, setRemainingTime] = useState(null); // ⏱ timer state
+  const [remainingTime, setRemainingTime] = useState(null); 
 
   useEffect(() => {
     const fetchTestQuestions = async () => {
@@ -19,7 +19,7 @@ const StartTestPage = () => {
         const res = await axios.get(`http://localhost:8080/api/test/${testId}`);
         setQuestions(res.data.questions);
         setTestInfo(res.data.testDTO);
-        setRemainingTime(res.data.testDTO.time); // ✅ set timer from backend
+        setRemainingTime(res.data.testDTO.time);
       } catch (err) {
         setError('❌ Failed to load questions: ' + (err.response?.data || err.message));
       }
@@ -28,7 +28,7 @@ const StartTestPage = () => {
     fetchTestQuestions();
   }, [testId]);
 
-  // Timer logic ⏱
+  // Timer logic 
   useEffect(() => {
     if (!remainingTime || submitted) return;
 
@@ -36,7 +36,7 @@ const StartTestPage = () => {
       setRemainingTime((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          handleSubmit(); // ⏱ auto submit
+          handleSubmit(); 
           return 0;
         }
         return prev - 1;

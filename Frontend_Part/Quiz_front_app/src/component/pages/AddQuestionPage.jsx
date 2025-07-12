@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // 👈 Added navigate hook
-
+import { useNavigate } from 'react-router-dom'; 
 const AddQuestionPage = () => {
   const [tests, setTests] = useState([]);
   const [question, setQuestion] = useState({
@@ -15,7 +14,8 @@ const AddQuestionPage = () => {
   });
   const [message, setMessage] = useState('');
 
-  const navigate = useNavigate(); // 👈 Initialize navigate
+  const navigate = useNavigate(); 
+
 
   // Load test list
   useEffect(() => {
@@ -34,7 +34,7 @@ const AddQuestionPage = () => {
     try {
       await axios.post('http://localhost:8080/api/test/question', question);
       alert('Question added successfully!');
-      navigate('/admin/dashboard'); // 👈 Redirect after submit
+      navigate('/admin/dashboard'); 
     } catch (error) {
       setMessage('Error adding question: ' + (error.response?.data || 'Unknown error'));
     }

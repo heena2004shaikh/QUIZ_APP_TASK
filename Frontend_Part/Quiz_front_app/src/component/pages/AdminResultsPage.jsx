@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 const AdminResultsPage = () => {
-  const { testId } = useParams(); // testId is optional (can be undefined)
+  const { testId } = useParams(); 
   const [results, setResults] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);

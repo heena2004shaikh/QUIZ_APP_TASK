@@ -18,15 +18,15 @@ const LoginPage = () => {
 
       const user = res.data;
 
-      // Save token and role in localStorage
-      localStorage.setItem('token', user.token);     // if backend sends JWT
-      localStorage.setItem('role', user.role.toLowerCase());       // "admin" or "user"
+      
+      localStorage.setItem('token', user.token);     
+      localStorage.setItem('role', user.role.toLowerCase());       
       localStorage.setItem('user', JSON.stringify(user));
 
       alert('Login successful!');
 
       if (user.role.toLowerCase() === 'admin') {
-        navigate('/admin/dashboard'); // ✅ Also use correct route path
+        navigate('/admin/dashboard');
       } else {
         navigate('/user/home');
       }

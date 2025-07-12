@@ -6,7 +6,7 @@ const QuizPlayer = () => {
   const { quizId } = useParams();
   const navigate = useNavigate();
 
-  // Find the quiz by ID (convert quizId from string to number)
+  
   const quiz = quizzes.find(q => q.id === parseInt(quizId));
 
   const [current, setCurrent] = useState(0);
@@ -15,7 +15,7 @@ const QuizPlayer = () => {
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
 
-  // Handle edge case: Invalid quiz ID
+  
   if (!quiz) {
     return (
       <div className="text-center mt-10 text-red-600">

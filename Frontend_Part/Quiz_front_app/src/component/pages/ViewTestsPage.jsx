@@ -13,8 +13,8 @@ const ViewTestsPage = () => {
       try {
         const response = await axios.get(`http://localhost:8080/api/test/${testId}`);
         console.log('✅ API Response:', response.data);
-        setQuestions(response.data.questions);       // ✅ Fix: only set the array
-        setTestInfo(response.data.testDTO);          // ✅ Store test details
+        setQuestions(response.data.questions);      
+        setTestInfo(response.data.testDTO);          
       } catch (err) {
         console.error(err);
         setError('❌ Failed to load questions: ' + (err.response?.data || err.message));

@@ -29,7 +29,7 @@ const CreateTest = () => {
       setMessage('✅ Test created successfully!');
       setTest({ title: '', description: '', time: '' });
 
-      // Redirect after short delay
+      
       setTimeout(() => {
         navigate('/admin/dashboard');
       }, 1500);

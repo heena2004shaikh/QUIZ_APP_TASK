@@ -24,7 +24,7 @@ const AdminDashboard = () => {
       try {
         await ApiService.deleteTestById(testId);
         alert("Test deleted successfully!");
-        fetchTests(); // Refresh list
+        fetchTests(); 
       } catch (err) {
         console.error("Error deleting test:", err);
         alert("Failed to delete test.");
@@ -33,7 +33,7 @@ const AdminDashboard = () => {
   };
 
   const handleEdit = (testId) => {
-    navigate(`/admin/edit-test/${testId}`); // You'll need a page for this
+    navigate(`/admin/edit-test/${testId}`); 
   };
 
   return (
